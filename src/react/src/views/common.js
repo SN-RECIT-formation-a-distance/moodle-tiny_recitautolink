@@ -52,6 +52,10 @@ export class GeneratorCode{
 		h5p: '',
 	};
 
+	static embedData = {
+		activity: ''
+	}
+
 	static infoData = {
 		info: ''
 	};
@@ -144,6 +148,17 @@ export class GeneratorCode{
 		}
 
 		let result = `h5p/${data.h5p}`;
+		result = `[[${result}]]`;
+		return result;
+  	}
+	 
+	static getEmbedCode(data){
+		if(data.activity.length === 0){
+			alert(M.util.get_string('invalidcode', 'tiny_recitautolink'));
+			return null;
+		}
+
+		let result = `e/${data.activity}`;
 		result = `[[${result}]]`;
 		return result;
   	}

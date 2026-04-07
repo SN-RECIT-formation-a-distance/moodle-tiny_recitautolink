@@ -43,6 +43,7 @@ $string['csspreview'] = 'Aperçu du CSS';
 $string['cancel'] = 'Annuler';
 $string['activity'] = 'Activité';
 $string['activities'] = 'Activités';
+$string['embed'] = 'Intégration';
 $string['infoteachernum'] = "L'enseignant #1 correspond au premier prénom trouvé par ordre alphabétique. Si l'élève est associé à un groupe, la correspondance avec l'enseignant est filtrée en fonction du groupe.";
 $string['injection'] = 'Injection';
 $string['injectionresources'] = 'Le contenu HTML de la page sélectionnée sera injecté à l\'endroit du code d\'intégration généré.';

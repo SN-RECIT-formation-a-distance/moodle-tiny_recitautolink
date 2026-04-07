@@ -42,6 +42,7 @@ $string['infobs'] = 'Bootstrap classes can be modified. Classes change the appea
 $string['csspreview'] = 'CSS preview';
 $string['cancel'] = 'Cancel';
 $string['activity'] = 'Activity';
+$string['embed'] = 'Embed';
 $string['infoteachernum'] = 'Teacher #1 corresponds to the first given name found in alphabetical order. If the student is associated with a group, the correspondence with the teacher is filtered according to the group';
 $string['activities'] = 'Activities';
 $string['injection'] = 'Injection';

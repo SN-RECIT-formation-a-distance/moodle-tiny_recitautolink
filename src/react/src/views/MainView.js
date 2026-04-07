@@ -30,6 +30,7 @@ import { H5PForm } from './H5PForm';
 import { InfoForm } from './InfoForm';
 import { InjectionActivityForm } from './InjectionActivityForm';
 import { QRCodeForm } from './QRCodeForm';
+import { EmbedForm } from './EmbedForm';
 
 
 export class MainView extends Component {
@@ -62,7 +63,7 @@ export class MainView extends Component {
             let modnameToExclude = ['label']; //Exclude label because it's not an activity
             for (let e of result[0].data){
                 if (modnameToExclude.includes(e.modname)) continue;
-                list.push({value: e.name, label: e.name + " [" + e.modname + "]"});
+                list.push({value: e.name, label: e.name + " [" + e.modname + "]", modname: e.modname});
             }
             that.setState({cmList: list});
         });
@@ -129,6 +130,9 @@ export class MainView extends Component {
                 </Tab>
                 <Tab className={className} title={M.util.get_string('injection', 'tiny_recitautolink')} eventKey='injection' style={style}>
                     <InjectionActivityForm cmList={this.state.cmList} onClose={this.props.onClose}/>             
+                </Tab>
+                <Tab className={className} title={M.util.get_string('embed', 'tiny_recitautolink')} eventKey='embed' style={style}>
+                    <EmbedForm cmList={this.state.cmList} onClose={this.props.onClose}/>             
                 </Tab>
                 <Tab className={className} title={M.util.get_string('tests', 'tiny_recitautolink')} eventKey='tests' style={style}>
                     <TestForm cmList={this.state.cmList} h5pList={this.state.h5pList} sectionList={this.state.sectionList} onClose={this.props.onClose}/>             
