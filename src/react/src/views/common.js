@@ -254,9 +254,9 @@ export class HelpButton extends Component {
     render(){
         const popover = (
             <Popover id="popover-help">
-              <Popover.Content>
+              <Popover.Body>
                 {this.props.helpText}
-              </Popover.Content>
+              </Popover.Body>
             </Popover>
           );
 
