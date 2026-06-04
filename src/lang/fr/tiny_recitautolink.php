@@ -1,6 +1,6 @@
 <?php
 $string['pluginname'] = 'Autolink';
-$string['privacy:metadata'] = 'Ce plugin ne conserve pas de données personnelles.';
+$string['privacy:metadata'] = 'Ce plugin ne conserve pas de données personnelles. Cependant, les codes générés par ce plugin (ex. : nom, courriel, avatar de l\'étudiant) peuvent amener filter_recitautolink à afficher des renseignements personnels lors du rendu du contenu.';
 
 $string['course'] = 'Cours';
 $string['fullname'] = 'Nom complet';

@@ -220,11 +220,23 @@ export class GeneratorCode{
 		return result;
 	}
 
+	static escapeHtml(str) {
+		return str.replace(/&/g, '&amp;')
+		          .replace(/</g, '&lt;')
+		          .replace(/>/g, '&gt;');
+	}
+
+	static sanitizeShortcodeText(text) {
+		// Strip characters that break the [[...]] shortcode format:
+		// " is the token delimiter, [[ and ]] are the shortcode boundaries.
+		return text.replace(/"/g, '').replace(/\[{2}|\]{2}/g, '');
+	}
+
 	static getLinkTextIntCode(linktext){
 		let result = '';
 
 		if (linktext.length > 0){
-			result = `desc:"${linktext}"/`;
+			result = `desc:"${GeneratorCode.sanitizeShortcodeText(linktext)}"/`;
 		}
 
 		return result;
@@ -234,7 +246,9 @@ export class GeneratorCode{
 		let result = '';
 
 		if (css.length > 0){
-			result = `class:"${css}"/`;
+			// Allow only safe CSS class name characters.
+			const safe = css.replace(/[^a-zA-Z0-9 \-_]/g, '');
+			result = `class:"${safe}"/`;
 		}
 
 		return result;
