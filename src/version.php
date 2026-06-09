@@ -24,11 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2026052000;
+$plugin->version   = 2026052001;
 $plugin->requires  = 2025100603.00; // Moodle 5.1.3
 $plugin->component = 'tiny_recitautolink';
 
-$plugin->release = 'v3.0.0-stable';
+$plugin->release = 'v3.0.1-stable';
 $plugin->supported = [501, 501];      //  Moodle 4.1.x are supported.
 $plugin->maturity = MATURITY_STABLE; // MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC or MATURITY_STABLE
   
