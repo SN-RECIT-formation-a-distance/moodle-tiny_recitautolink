@@ -1,6 +1,6 @@
 {
   "name": "recit_autolink",
-  "version": "v3.0.0-stable",
+  "version": "v3.0.2-stable",
   "description": "RÉCIT Auto-link",
   "targets": {
         "default": {

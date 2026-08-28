@@ -54,14 +54,9 @@ export class MainView extends Component {
         let that = this;
         
         $glVars.webApi.getCmList($glVars.classHandler.get("courseid"), function(result){
-            if(result.error){
-                alert(result.error);
-                return;
-            }
-
             let list = [];
             let modnameToExclude = ['label']; //Exclude label because it's not an activity
-            for (let e of result[0].data){
+            for (let e of result.data){
                 if (modnameToExclude.includes(e.modname)) continue;
                 list.push({value: e.name, label: e.name + " [" + e.modname + "]", modname: e.modname});
             }
@@ -69,42 +64,27 @@ export class MainView extends Component {
         });
         
         $glVars.webApi.getSectionList($glVars.classHandler.get("courseid"), function(result){
-            if(result.error){
-                alert(result.error);
-                return;
-            }
-
             let list = [];
-            for (let e of result[0].data){
+            for (let e of result.data){
                 list.push({value: e.name, label: e.name});
             }
             that.setState({sectionList: list});
         });
         
         $glVars.webApi.getH5PList($glVars.classHandler.get("courseid"), function(result){
-            if(result.error){
-                alert(result.error);
-                return;
-            }
-
             let list = [];
-            for (let e of result[0].data){
+            for (let e of result.data){
                 list.push({value: e.name, label: e.name});
             }
             that.setState({h5pList: list});
         });
 
         $glVars.webApi.getRoleList($glVars.classHandler.get("courseid"), function(result){
-            if(result.error){
-                alert(result.error);
-                return;
-            }
-
             let list = [];
-            for (let e of result[0].data){
+            for (let e of result.data){
                 list.push({value: e.archetype, label: e.localname});
             }
-            that.setState({roleList: list});
+            that.setState({roleList: list}); 
         });
     }
 

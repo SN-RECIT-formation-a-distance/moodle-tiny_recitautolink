@@ -52,7 +52,7 @@ class tiny_recitautolink_external extends external_api {
 
         $coursecontext = \context_course::instance($params['courseid']);
         self::validate_context($coursecontext);
-        require_capability('moodle/course:view', $coursecontext);
+        require_capability('moodle/course:manageactivities', $coursecontext);
 
         $result = array();
         $modinfo = get_fast_modinfo($params['courseid']);
@@ -87,7 +87,7 @@ class tiny_recitautolink_external extends external_api {
 
         $coursecontext = \context_course::instance($params['courseid']);
         self::validate_context($coursecontext);
-        require_capability('moodle/course:view', $coursecontext);
+        require_capability('moodle/course:manageactivities', $coursecontext);
 
         $result = array();
         $modinfo = get_fast_modinfo($params['courseid']);
@@ -163,7 +163,7 @@ class tiny_recitautolink_external extends external_api {
 
         $coursecontext = \context_course::instance($params['courseid']);
         self::validate_context($coursecontext);
-        require_capability('moodle/course:view', $coursecontext);
+        require_capability('moodle/course:manageactivities', $coursecontext);
         $result = array();
         $rolelist = role_get_names($coursecontext);
         
